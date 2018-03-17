@@ -38,14 +38,24 @@ class ViewController: UIViewController {
     func updateDiceImages(){
         randomDiceIndex1 = Int(arc4random_uniform(6))
         randomDiceIndex2 = Int(arc4random_uniform(6))
-        
-        diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
-        diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
-        print(randomDiceIndex2)
+        let image = UIImage(named: diceArray[randomDiceIndex1])
+        diceImageView1.image = image
+        let image with _ = UIImage(named: diceArray[randomDiceIndex2])
+        diceImageView2.image = image
+        print(randomDiceIndex1, randomDiceIndex2)//Just for debugging
     }
     
+//    func updateDiceImages(){
+//        randomDiceIndex1 = Int(arc4random_uniform(6))
+//        randomDiceIndex2 = Int(arc4random_uniform(6))
+//
+//        diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
+//        diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
+//        print(randomDiceIndex1, randomDiceIndex2)//Just for debugging
+//    }
+//
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        for _ in 1...5 {
+        for _ in 1...10 {
             updateDiceImages()
             sleep(1)
             }
